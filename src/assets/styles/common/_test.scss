@@ -1,0 +1,68 @@
+.gender-group {
+  text-align: center;
+  margin-left: 30px;
+}
+
+.staff-container {
+  max-width: 1480px;
+  width: 90%;
+  margin: 0 auto;
+}
+.table-wrapper {
+  margin-top: 60px;
+}
+.ant-table
+  .ant-table-container
+  .ant-table-content
+  table
+  thead.ant-table-thead
+  .ant-table-cell,
+.ant-table-wrapper .ant-table-thead > tr > th {
+  background-color: #978475;
+  color: #fff;
+  font-weight: 500;
+}
+.ant-table-cell:first-child {
+  text-align: center;
+  margin: 0 auto;
+  // display: flex;
+  // justify-content: center;
+}
+th:first-child {
+  text-align: center !important;
+}
+.item-icon-delete {
+  text-align: center;
+  font-size: 17px;
+  cursor: pointer;
+}
+.title-delete {
+  font-size: 16px;
+}
+.table-wrapper {
+  .block-btn {
+    text-align: end;
+    margin-bottom: 8px;
+    button {
+      background-color: #978475;
+      padding: 6px 15px;
+      border-radius: 3px;
+      border: none;
+      &:hover {
+        color: #fff;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 13px;
+      }
+    }
+  }
+}
+.form-user-wrapper {
+  margin-top: 60px;
+  button {
+    margin-top: 15px;
+    background-color: #978475;
+  }
+}
