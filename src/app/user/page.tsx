@@ -29,7 +29,9 @@ export default function HomePage() {
       } else {
         alertFail(api, "Fail");
       }
-    } catch (error) {}
+    } catch (error) {
+      alertFail(api, "Fail");
+    }
   };
 
   const onFinishFailed = (errorInfo: any) => {

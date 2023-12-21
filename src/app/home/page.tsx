@@ -16,6 +16,7 @@ import {
   DeleteOutlined,
   ExclamationCircleOutlined,
 } from "@ant-design/icons";
+import { ColumnsType } from "antd/es/table";
 
 export default function HomePage() {
   const dispatch = useDispatch();
@@ -65,7 +66,7 @@ export default function HomePage() {
       </Button>
     </div>
   );
-  const columns = [
+  const columns: ColumnsType<any> = [
     {
       title: "ID",
       dataIndex: "id",
@@ -78,7 +79,7 @@ export default function HomePage() {
       render: (text: any, record) => (
         <>
           <span className="table-item-name">
-            <a href={`/user/${record?.id}/detail`}>{text}</a>{" "}
+            <a href={`/user/${record?.id}/detail`}>{text}</a>
           </span>
         </>
       ),
