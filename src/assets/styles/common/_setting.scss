@@ -12,13 +12,13 @@ html {
   touch-action: manipulation;
 }
 body {
-  font-family: "Hiragino Sans", sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   & button {
-    font-family: "Hiragino Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
   }
 }
 
@@ -26,7 +26,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace, " Inter-Semibold";
 }
-
+@font-face {
+  font-family: "Roboto";
+  src: url("../../fonts/Roboto-Thin.ttf");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../../fonts/Roboto-Light.ttf");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../../fonts/Roboto-LightItalic.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../../fonts/Roboto-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../../fonts/Roboto-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../../fonts/Roboto-BlackItalic.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../../fonts/Roboto-Bold.ttf");
+  font-weight: 700;
+}
 .d-flex-bw {
   display: flex;
   align-items: center;
