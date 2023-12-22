@@ -1,22 +1,25 @@
 "use client";
 import { alertFail, alertSuccess } from "@/helper/common";
-import { postUser } from "@/redux/features/auth/authSlice";
+import { postUser } from "@/redux/features/auth/userSlice";
 import { genderItem } from "@/utils/genderItem";
 import type { RadioChangeEvent } from "antd";
-import { Button, Form, Input, Radio } from "antd";
+import { Button, DatePicker, Form, Input, Radio, Space } from "antd";
 import useNotification from "antd/es/notification/useNotification";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import type { DatePickerProps } from "antd";
 export default function HomePage() {
   const dispatch = useDispatch();
   const [gender, setGender] = useState("MALE");
   const [api, showPopup]: any = useNotification();
   const router = useRouter();
+  const date = new Date();
+  const [dob, setDob] = useState<any>(date);
   const onFinish = async (values: any) => {
     const userData = {
-      name: values.address,
-      dob: values.dob,
+      name: values.name,
+      dob: dob,
       email: values.email,
       address: values.address,
       gender: gender,
@@ -34,13 +37,12 @@ export default function HomePage() {
     }
   };
 
-  const onFinishFailed = (errorInfo: any) => {
-    console.log("Failed:", errorInfo);
-  };
   const onChange = (e: RadioChangeEvent) => {
     setGender(e.target.value);
   };
-
+  const onChangeDate: DatePickerProps["onChange"] = (date, dateString) => {
+    setDob(dateString);
+  };
   return (
     <div className="form-user-wrapper">
       {showPopup}
@@ -51,7 +53,6 @@ export default function HomePage() {
         style={{ maxWidth: 600 }}
         initialValues={{ remember: true }}
         onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
         <Form.Item
@@ -61,24 +62,23 @@ export default function HomePage() {
         >
           <Input />
         </Form.Item>
+        <div className="date-item">
+          <Space direction="vertical">
+            <DatePicker onChange={onChangeDate} />
+          </Space>
+        </div>
+
         <Form.Item
           label="Email"
           name="email"
-          rules={[{ required: true, message: "Please input your username!" }]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          label="Date of birth"
-          name="dob"
-          rules={[{ required: true, message: "Please input your password!" }]}
+          rules={[{ required: true, message: "Please input your email!" }]}
         >
           <Input />
         </Form.Item>
         <Form.Item
           label="Address"
           name="address"
-          rules={[{ required: true, message: "Please input your password!" }]}
+          rules={[{ required: true, message: "Please input your address!" }]}
         >
           <Input />
         </Form.Item>

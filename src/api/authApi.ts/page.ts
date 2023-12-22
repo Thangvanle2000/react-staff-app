@@ -15,7 +15,7 @@ export const authApi: any = {
     const url: string = "/user";
     return axiosClient.post(url, data);
   },
-  async updateUser(id: any, data: any): Promise<AxiosResponse<any>> {
+  async editUser(id: any, data: any): Promise<AxiosResponse<any>> {
     const url: string = `/user/${id}/update`;
     return axiosClient.put(url, data);
   },

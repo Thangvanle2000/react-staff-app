@@ -8,11 +8,12 @@ export default async function handler(
 ) {
   if (req.method === "PUT") {
     const param: any = req.query;
+
     const { email, name, dob, gender, address } = req.body;
 
     const user = await prisma.user.findUnique({
       where: {
-        id: param.id,
+        id: +param.id,
       },
     });
     if (!user) {
@@ -23,7 +24,7 @@ export default async function handler(
     } else {
       await prisma.user.update({
         where: {
-          id: param.id,
+          id: +param.id,
         },
         data: {
           email: email,
@@ -35,6 +36,7 @@ export default async function handler(
       });
       return res.status(200).json({
         message: "Update Success",
+        status: "success",
       });
     }
   } else {

@@ -48,9 +48,9 @@ export const postUser: any = createAsyncThunk(
 );
 export const updateUser: any = createAsyncThunk(
   "user/updateUsers",
-  async (data): Promise<any> => {
+  async ({ id, data }: { id: any; data: any }): Promise<any> => {
     try {
-      let res: any = await authApi.updateUser(data);
+      let res: any = await authApi.editUser(id, data);
       return res;
     } catch (error: any) {}
   }
