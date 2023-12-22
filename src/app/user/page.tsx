@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import type { DatePickerProps } from "antd";
-export default function HomePage() {
+export default function CreateUser() {
   const dispatch = useDispatch();
   const [gender, setGender] = useState("MALE");
   const [api, showPopup]: any = useNotification();
@@ -46,8 +46,11 @@ export default function HomePage() {
   return (
     <div className="form-user-wrapper">
       {showPopup}
+      <h2 className="title-page" style={{ marginLeft: "-610px" }}>
+        Create Users
+      </h2>
+
       <Form
-        name="basic"
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}
         style={{ maxWidth: 600 }}

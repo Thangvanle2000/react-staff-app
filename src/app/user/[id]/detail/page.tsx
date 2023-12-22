@@ -9,6 +9,7 @@ import dayjs from "dayjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 export default function UserDetail(params: { params: { id: string } }) {
   const dispatch = useDispatch();
   const [api, showPopup]: any = useNotification();
@@ -21,7 +22,6 @@ export default function UserDetail(params: { params: { id: string } }) {
     (state: any) => state.userReducer
   );
   const [gender, setGender] = useState();
-  const dateFormat = "YYYY-MM-DD";
   const [formRevise]: [FormInstance] = Form.useForm();
   const [dob, setDob] = useState<string>();
   useEffect(() => {

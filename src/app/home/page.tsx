@@ -1,23 +1,17 @@
 "use client";
 import { alertFail, alertSuccess } from "@/helper/common";
+import { deleteUser, getUsers } from "@/redux/features/auth/userSlice";
 import {
-  deleteUser,
-  getUsers,
-  postUser,
-} from "@/redux/features/auth/userSlice";
-import { genderItem } from "@/utils/genderItem";
-import type { RadioChangeEvent } from "antd";
-import { Button, Form, Input, Modal, Pagination, Radio, Table } from "antd";
-import useNotification from "antd/es/notification/useNotification";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  LoadingOutlined,
   DeleteOutlined,
   ExclamationCircleOutlined,
+  LoadingOutlined,
 } from "@ant-design/icons";
+import { Button, Modal, Pagination, Table } from "antd";
+import useNotification from "antd/es/notification/useNotification";
 import { ColumnsType } from "antd/es/table";
 import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function HomePage() {
   const dispatch = useDispatch();
